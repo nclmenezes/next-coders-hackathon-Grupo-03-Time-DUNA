@@ -1,0 +1,2 @@
+export const BASE_DATE = '1789-07-14';
+export const MINUTES_BEFORE_CLASS_TO_RELEASE_LINK = 10;

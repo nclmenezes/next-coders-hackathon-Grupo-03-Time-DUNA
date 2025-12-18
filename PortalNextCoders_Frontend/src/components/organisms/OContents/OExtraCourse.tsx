@@ -1,0 +1,155 @@
+import {
+    Box,
+    IconButton,
+    ListItem,
+    ListItemButton,
+    ListItemText
+} from "@mui/material";
+import {useNavigate} from "react-router";
+import {ExtraCourse} from "../../../interfaces/courses/responses/Course";
+import EditIcon from "@mui/icons-material/Edit";
+import {useState} from "react";
+import extraCourseService from "../../../services/api/classes/extraCourse.service";
+import DeleteIcon from "@mui/icons-material/Delete";
+import {MDeleteConfirmationModal} from "../../molecules/Shared/MDeleteConfirmationModal";
+import {MEditExtraCourseModal} from "../../molecules/MContents/course/MEditExtraCourseModal";
+import {useExtraCourse} from "../../../context/ExtraCourseProvider/ExtraCourseProvider";
+
+interface props {
+    key: React.Key;
+    course: ExtraCourse;
+    to: string;
+    onConfirm: () => void;
+}
+
+export function OExtraCourse({key, course, to, onConfirm}: props) {
+    const [currentCourse, setCurrentCourse] = useState<ExtraCourse>(course);
+    const navigate = useNavigate();
+    const [isEditModalOpen, setEditModalOpen] = useState<boolean>(false);
+    const [loadingModal, setLoadingModal] = useState<boolean>(false);
+    const [isDeleteModalOpen, setDeleteModalOpen] = useState(false);
+
+
+    const {setCourse} =
+        useExtraCourse();
+
+    const handleClick = () => {
+        setCourse(course);
+        navigate(to);
+    };
+
+    const formattedDate = currentCourse.createdAt
+        ? new Date(currentCourse.createdAt).toLocaleDateString()
+        : "";
+
+    const handleOpenEditModal = () => {
+        setEditModalOpen(true);
+    };
+
+    const handleCloseEditModal = () => {
+        setEditModalOpen(false);
+    };
+
+    const handleEditIconClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        handleOpenEditModal();
+    };
+
+    const handleDeleteIconClick = (e: React.MouseEvent) => {
+        e.stopPropagation();
+        handleOpenDeleteModal();
+    };
+
+    const handleOpenDeleteModal = () => {
+        setDeleteModalOpen(true);
+    };
+
+    const handleCloseDeleteModal = () => {
+        setDeleteModalOpen(false);
+    };
+
+
+    const handleSaveEdit = async (updatedCourse: Partial<ExtraCourse>) => {
+        setLoadingModal(true)
+        try {
+
+            const updatedCourseData: ExtraCourse = {
+                ...currentCourse,
+                ...updatedCourse,
+            };
+
+            await extraCourseService.Update(updatedCourseData);
+            setCurrentCourse(updatedCourseData);
+            handleCloseEditModal();
+        } catch (error) {
+            console.error('Error:', error);
+            setLoadingModal(false);
+        } finally {
+            setLoadingModal(false);
+        }
+    };
+
+    return (
+        <ListItem disablePadding
+                  sx={{
+                      border: "1px solid #EBF0F3",
+                  }}
+        >
+            <ListItemButton
+                {...({onClick: handleClick})}
+                sx={{
+                    marginLeft: 1,
+                    width: "100%",
+                    border: "1px solid #EBF0F3",
+                    my: 1,
+                    borderRadius: 1,
+                    cursor: "pointer",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                }}
+            >
+                <ListItemText
+                    primary={
+                        !currentCourse.description ? currentCourse.name :
+                            `${currentCourse.name} (${currentCourse.description})`
+                    }
+                    secondary={`Criado em: ${formattedDate}`}
+                    sx={{textAlign: "left"}}
+                />
+            </ListItemButton>
+
+            <Box sx={{display: "flex", alignItems: "center"}}>
+                <IconButton
+                    onClick={handleEditIconClick}
+                    sx={{cursor: "pointer"}}
+                >
+                    <EditIcon color="primary"/>
+                </IconButton>
+
+                <MEditExtraCourseModal
+                    course={course}
+                    isOpen={isEditModalOpen}
+                    onClose={handleCloseEditModal}
+                    onSave={handleSaveEdit}
+                    loading={loadingModal}
+                />
+
+                <IconButton
+                    onClick={handleDeleteIconClick}
+                    sx={{cursor: "pointer"}}
+                >
+                    <DeleteIcon color="error"/>
+                </IconButton>
+
+                <MDeleteConfirmationModal
+                    isOpen={isDeleteModalOpen}
+                    onCancel={handleCloseDeleteModal}
+                    onConfirm={onConfirm}
+                    name="trilha"
+                />
+            </Box>
+
+        </ListItem>
+    );
+}

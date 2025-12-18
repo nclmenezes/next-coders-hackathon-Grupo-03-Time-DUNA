@@ -1,0 +1,113 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+  batch: true
+  branches:
+    include:
+      - development
+    
+  paths:
+    include:
+      - development
+
+pr:
+  branches:
+    include:
+      - development
+
+variables:
+- name: directory
+  value: '.'
+- name: stage
+  value: development
+- name: VITE_AUTH_API_URL
+  value: "https://nextcoders-candidato-dev-auth.azurewebsites.net/"
+- name: VITE_MAIL_API_URL
+  value: "https://nextcoders-candidato-dev-email.azurewebsites.net/"
+- name: VITE_ACCOUNT_API_URL
+  value: "https://nextcoders-candidato-dev-account.azurewebsites.net/"
+- name: VITE_SURVEY_API_URL
+  value: "https://nextcoders-candidato-dev-survey.azurewebsites.net/"
+- name: VITE_ANTIFRAUD_API_URL
+  value: "https://nextcoders-aluno-dev-antifraud.azurewebsites.net/"
+- name: VITE_STUDENT_API_URL
+  value: https://nextcoders-aluno-dev-student.azurewebsites.net/
+- name: VITE_STUDENT_AUTH_API_URL
+  value: "https://nextcoders-aluno-dev-auth.azurewebsites.net/"
+- name: VITE_COURSE_API_URL
+  value: "https://nextcoders-aluno-dev-course.azurewebsites.net/"
+- name: VITE_STUDENT_ACCOUNT_API_URL
+  value: "https://nextcoders-aluno-dev-account.azurewebsites.net/"
+- name: VITE_CLASS_MANAGEMENT_API_URL
+  value: "https://next-coders-contractor-engine-dev.azurewebsites.net/api/"
+- name: VITE_CANDIDATE_CLASS_API_URL
+  value: "https://nextcoders-candidato-dev-class.azurewebsites.net/"
+stages:
+- stage: __default
+  jobs:
+  - job: Job
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+    - task: NodeTool@0
+      displayName: 'Use Node 18.13.0'
+      inputs:
+        versionSpec: 18.13.0
+    - task: YarnInstaller@3
+      displayName: 'Installing Yarn'
+      inputs:
+        versionSpec: '1.x'
+        checkLatest: true
+    - task: Bash@3
+      displayName: 'Update Yarn version to 1.22.17'
+      inputs:
+        targetType: inline
+        script: |
+          yarn set version berry
+          yarn set version 1.22.17
+    - task: CmdLine@2
+      displayName: 'yarn --production yarn install'
+      inputs:
+        script: yarn --production yarn install
+        workingDirectory: $(directory)
+    - task: CmdLine@2
+      displayName: 'yarn build'
+      inputs:
+        script: set "REACT_APP_STAGE=$(stage)" && yarn add @types/styled-components-react-native -D  && yarn run build
+        workingDirectory: $(directory)
+    - script: echo "VITE_COURSE_API_URL = $(VITE_COURSE_API_URL)"
+      displayName: 'Debug VITE_COURSE_API_URL'
+    - task: CmdLine@2
+      displayName: 'list all directories'
+      inputs:
+        script: ls -d */
+        workingDirectory: $(directory)
+    - task: CopyFiles@2
+      displayName: 'Copy files'
+      inputs:
+        sourceFolder: '$(directory)/dist'
+        Contents: '**/*'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        cleanTargetFolder: true
+    - task: CopyFiles@2
+      displayName: 'Copy web config'
+      inputs:
+        sourceFolder: '$(directory)'
+        Contents: '**/web.config'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+        cleanTargetFolder: false
+    - task: ArchiveFiles@2
+      displayName: 'Archive files'
+      inputs:
+        rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+        includeRootFolder: false
+        archiveType: zip
+        archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
+        replaceExistingArchive: true
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Build Artifacts'
+      inputs:
+        pathtoPublish: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
