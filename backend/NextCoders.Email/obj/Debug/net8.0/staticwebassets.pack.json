@@ -1,0 +1,29 @@
+{
+  "Files": [
+    {
+      "Id": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/swagger/v1/swagger.json",
+      "PackagePath": "staticwebassets/swagger/v1/swagger.json"
+    },
+    {
+      "Id": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/swagger/v1/swagger.yaml",
+      "PackagePath": "staticwebassets/swagger/v1/swagger.yaml"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.NextCoders.EmailAPI.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.build.NextCoders.EmailAPI.props",
+      "PackagePath": "build\\NextCoders.EmailAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildMultiTargeting.NextCoders.EmailAPI.props",
+      "PackagePath": "buildMultiTargeting\\NextCoders.EmailAPI.props"
+    },
+    {
+      "Id": "obj/Debug/net8.0/staticwebassets/msbuild.buildTransitive.NextCoders.EmailAPI.props",
+      "PackagePath": "buildTransitive\\NextCoders.EmailAPI.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

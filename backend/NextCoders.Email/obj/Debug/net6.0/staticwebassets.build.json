@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "dNUBMlToUYK9hPrHH+Hc8t22sC+KCfEsqip0u9mRKi0=",
+  "Source": "NextCoders.EmailAPI",
+  "BasePath": "_content/NextCoders.EmailAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj",
+      "Version": 2,
+      "Source": "NextCoders.Infra.RazorTemplatesEmails",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

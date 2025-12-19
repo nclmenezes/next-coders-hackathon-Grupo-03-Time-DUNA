@@ -1,0 +1,70 @@
+{
+  "Version": 1,
+  "Hash": "JkoQDDQy87yg90KrFbmeu6aIIZSfcFCFTjlxi7mI5os=",
+  "Source": "NextCoders.EmailAPI",
+  "BasePath": "_content/NextCoders.EmailAPI",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj",
+      "Version": 2,
+      "Source": "NextCoders.Infra.RazorTemplatesEmails",
+      "GetPublishAssetsTargets": "ComputeReferencedStaticWebAssetsPublishManifest;GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [
+    {
+      "Name": "NextCoders.EmailAPI/wwwroot",
+      "Source": "NextCoders.EmailAPI",
+      "ContentRoot": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/",
+      "BasePath": "_content/NextCoders.EmailAPI",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/swagger/v1/swagger.json",
+      "SourceId": "NextCoders.EmailAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/",
+      "BasePath": "_content/NextCoders.EmailAPI",
+      "RelativePath": "swagger/v1/swagger.json",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/swagger/v1/swagger.json"
+    },
+    {
+      "Identity": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/swagger/v1/swagger.yaml",
+      "SourceId": "NextCoders.EmailAPI",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/wwwroot/",
+      "BasePath": "_content/NextCoders.EmailAPI",
+      "RelativePath": "swagger/v1/swagger.yaml",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/swagger/v1/swagger.yaml"
+    }
+  ]
+}

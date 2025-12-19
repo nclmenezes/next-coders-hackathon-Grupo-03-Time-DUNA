@@ -1,0 +1,92 @@
+openapi: 3.0.1
+info:
+  title: NextCoders.Email
+  version: v1
+paths:
+  /api/Email:
+    post:
+      tags:
+        - Email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+      responses:
+        '200':
+          description: OK
+    get:
+      tags:
+        - Email
+      responses:
+        '200':
+          description: OK
+  /api/Email/Communication:
+    post:
+      tags:
+        - Email
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/EmailRequest'
+      responses:
+        '200':
+          description: OK
+components:
+  schemas:
+    EmailRequest:
+      type: object
+      properties:
+        name:
+          type: string
+          nullable: true
+        to:
+          type: string
+          nullable: true
+        type:
+          $ref: '#/components/schemas/EmailTypeEnum'
+        token:
+          type: string
+          nullable: true
+        message:
+          type: string
+          nullable: true
+      additionalProperties: false
+    EmailTypeEnum:
+      enum:
+        - '1'
+        - '2'
+        - '3'
+        - '4'
+        - '5'
+        - '6'
+        - '7'
+        - '8'
+        - '9'
+        - '10'
+        - '11'
+        - '12'
+      type: integer
+      format: int32
+      x-enum-description: 'Possible values: 1 - ConfirmRegister, 2 - ResetPassword, 3 - UpdatePassword, 4 - CompleteExam, 5 - SendCertificate, 6 - ApproveExam, 7 - RepproveExam, 8 - InactiveContact, 9 - SuccessAntiFraud, 10 - ErrorAntiFraud, 11 - ValidateMail, 12 - Dynamic'
+  securitySchemes:
+    Bearer:
+      type: apiKey
+      description: 'Input the JWT like: Bearer {your token}'
+      name: Authorization
+      in: header
+security:
+  - Bearer: [ ]

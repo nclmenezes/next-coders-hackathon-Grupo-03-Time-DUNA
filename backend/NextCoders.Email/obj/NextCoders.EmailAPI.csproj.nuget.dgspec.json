@@ -1,0 +1,711 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/NextCoders.EmailAPI.csproj": {}
+  },
+  "projects": {
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj",
+        "projectName": "NextCoders.Domain",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "FluentValidation": {
+              "target": "Package",
+              "version": "[11.2.1, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.Extensions.Identity.Core": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Extensions.Identity.Stores": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "MimeKit": {
+              "target": "Package",
+              "version": "[2.10.1, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore.SwaggerGen": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/NextCoders.EmailAPI.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/NextCoders.EmailAPI.csproj",
+        "projectName": "NextCoders.EmailAPI",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/NextCoders.EmailAPI.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Email/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/NextCoders.Infra.IoC.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/NextCoders.Infra.IoC.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/NextCoders.Middleware.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/NextCoders.Middleware.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "SendGrid.SmtpApi": {
+              "target": "Package",
+              "version": "[1.4.6, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj",
+        "projectName": "NextCoders.Infra.Data",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Dapper": {
+              "target": "Package",
+              "version": "[2.0.123, )"
+            },
+            "DapperExtensions": {
+              "target": "Package",
+              "version": "[1.7.0, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.AspNetCore.Identity.UI": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.35.0, )"
+            },
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "NetDevPack.Security.Jwt.AspNetCore": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "NetDevPack.Security.Jwt.Store.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.1.1, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/NextCoders.Infra.IoC.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/NextCoders.Infra.IoC.csproj",
+        "projectName": "NextCoders.Infra.IoC",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/NextCoders.Infra.IoC.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.IoC/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/NextCoders.Service.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/NextCoders.Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[8.0.3, )"
+            },
+            "Microsoft.Azure.Cosmos": {
+              "target": "Package",
+              "version": "[3.35.0, )"
+            },
+            "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "NetDevPack.Security.JwtExtensions": {
+              "target": "Package",
+              "version": "[7.1.0, )"
+            },
+            "Serilog.AspNetCore": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            },
+            "Serilog.Sinks.MSSqlServer": {
+              "target": "Package",
+              "version": "[6.1.0, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[7.2.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj",
+        "projectName": "NextCoders.Infra.RazorTemplatesEmails",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/NextCoders.Middleware.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/NextCoders.Middleware.csproj",
+        "projectName": "NextCoders.Middleware",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/NextCoders.Middleware.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Middleware/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Microsoft.AspNetCore.Http.Abstractions": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/NextCoders.Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/NextCoders.Service.csproj",
+        "projectName": "NextCoders.Service",
+        "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/NextCoders.Service.csproj",
+        "packagesPath": "/Users/ypedro/.nuget/packages/",
+        "outputPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Service/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/ypedro/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Domain/NextCoders.Domain.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.Data/NextCoders.Infra.Data.csproj"
+              },
+              "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj": {
+                "projectPath": "/Users/ypedro/work/nextcoders/PortalCandidato_Backend/NextCoders.Infra.RazorTemplatesEmails/NextCoders.Infra.RazorTemplatesEmails.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "FluentEmail.MailKit": {
+              "target": "Package",
+              "version": "[3.0.2, )"
+            },
+            "MassTransit": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "MassTransit.Azure.ServiceBus.Core": {
+              "target": "Package",
+              "version": "[8.1.2-develop.1590, )"
+            },
+            "Microsoft.AspNet.Identity.Core": {
+              "target": "Package",
+              "version": "[2.2.4, )"
+            },
+            "SendGrid": {
+              "target": "Package",
+              "version": "[9.29.3, )"
+            },
+            "Serilog.Sinks.AzureApp": {
+              "target": "Package",
+              "version": "[3.1.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.406/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
