@@ -4,48 +4,11 @@
 		<TargetFramework>net8.0</TargetFramework>
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
-		<Version>$(BuildNumber)</Version>
+		<RootNamespace>NextCoders.Email</RootNamespace>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="MassTransit" Version="8.1.2-develop.1590" />
-		<PackageReference Include="MassTransit.Azure.ServiceBus.Core" Version="8.1.2-develop.1590" />
-		<PackageReference Include="SendGrid" Version="9.29.3" />
-		<PackageReference Include="SendGrid.SmtpApi" Version="1.4.6" />
-		<PackageReference Include="Serilog.Sinks.AzureApp" Version="3.1.0" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="7.2.0" />
 	</ItemGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\NextCoders.Domain\NextCoders.Domain.csproj" />
-		<ProjectReference Include="..\NextCoders.Infra.IoC\NextCoders.Infra.IoC.csproj" />
-		<ProjectReference Include="..\NextCoders.Middleware\NextCoders.Middleware.csproj" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Application\" />
-	</ItemGroup>
-
-
-	<ItemGroup>
-	  <Content Include="..\.dockerignore">
-	    <Link>.dockerignore</Link>
-	  </Content>
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="wwwroot\swagger\v1" />
-	</ItemGroup>
-	<Target Name="OpenAPI" AfterTargets="Build" Condition="$(Configuration)=='Debug'">
-		<Exec Command="dotnet swagger tofile --output ./wwwroot/swagger/v1/swagger.yaml --yaml $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
-		<Exec Command="dotnet swagger tofile --output ./wwwroot/swagger/v1/swagger.json $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
-	</Target>
-
-	<ItemGroup>
-		<Folder Include="wwwroot\swagger\v1" />
-	</ItemGroup>
-	<Target Name="OpenAPI" AfterTargets="Build" Condition="$(Configuration)=='Debug'">
-		<Exec Command="dotnet swagger tofile --output ./wwwroot/swagger/v1/swagger.yaml --yaml $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
-		<Exec Command="dotnet swagger tofile --output ./wwwroot/swagger/v1/swagger.json $(OutputPath)$(AssemblyName).dll v1" WorkingDirectory="$(ProjectDir)" />
-	</Target>
 </Project>

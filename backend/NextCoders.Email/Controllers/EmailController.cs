@@ -1,8 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using NextCoders.Domain.Enums;
-using NextCoders.Domain.Interfaces.Services.Email;
-using NextCoders.Domain.Requests.Email;
-using Serilog;
+using NextCoders.Email.Models;
+using NextCoders.Email.Services;
 
 namespace NextCoders.Email.Controllers;
 
@@ -10,9 +8,9 @@ namespace NextCoders.Email.Controllers;
 [Route("api/[controller]")]
 public class EmailController : ControllerBase
 {
-    private readonly IEmailSend _emailService;
+    private readonly IEmailService _emailService;
 
-    public EmailController(IEmailSend emailService)
+    public EmailController(IEmailService emailService)
     {
         _emailService = emailService;
     }
@@ -23,16 +21,16 @@ public class EmailController : ControllerBase
         try
         {
             if (!Enum.IsDefined(typeof(EmailTypeEnum), request.Type))
-                return StatusCode(400, "Tipo de e-mail não existe.");
+                return StatusCode(400, "Invalid email type.");
 
             var response = await _emailService.SendEmail(request);
-            Log.Information("Message successfully sent");
-            return !response ? StatusCode(400, "Não foi possível realizar o envio do e-mail") : StatusCode(200, "E-mail enviado com sucesso");
+            Console.WriteLine("Message successfully sent");
+            return !response ? StatusCode(400, "Could not send the email") : StatusCode(200, "Email sent successfully");
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error while trying to send email");
-            return StatusCode(500, $"Erro ao tentar enviar e-mail: {ex.Message}");
+            Console.WriteLine($"Error while trying to send email: {ex.Message}");
+            return StatusCode(500, $"Error sending email: {ex.Message}");
         }
     }
     
@@ -42,16 +40,16 @@ public class EmailController : ControllerBase
         try
         {
             if (!Enum.IsDefined(typeof(EmailTypeEnum), request.Type))
-                return StatusCode(400, "Tipo de e-mail não existe.");
+                return StatusCode(400, "Invalid email type.");
 
             var response = await _emailService.SendCommunication(request);
-            Log.Information("Message successfully sent");
-            return !response ? StatusCode(400, "Não foi possível realizar o envio do e-mail") : StatusCode(200, "E-mail enviado com sucesso");
+            Console.WriteLine("Message successfully sent");
+            return !response ? StatusCode(400, "Could not send the email") : StatusCode(200, "Email sent successfully");
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error while trying to send email");
-            return StatusCode(500, $"Erro ao tentar enviar e-mail: {ex.Message}");
+            Console.WriteLine($"Error while trying to send email: {ex.Message}");
+            return StatusCode(500, $"Error sending email: {ex.Message}");
         }
     }
     
@@ -61,12 +59,12 @@ public class EmailController : ControllerBase
         try
         {
             var response = await _emailService.GetEmails();
-            return response is null ? StatusCode(400, "Não foi possível realizar a busca dos e-mails") : StatusCode(200, response);
+            return response is null ? StatusCode(400, "Could not fetch emails") : StatusCode(200, response);
         }
         catch (Exception ex)
         {
-            Log.Error(ex, "Error while trying to get emails");
-            return StatusCode(500, $"Erro ao tentar buscar e-mails: {ex.Message}");
+            Console.WriteLine($"Error while trying to get emails: {ex.Message}");
+            return StatusCode(500, $"Error fetching emails: {ex.Message}");
         }
     }
 }

@@ -1,41 +1,43 @@
-using NextCoders.Domain.Models;
-using NextCoders.Infra.IoC;
-using NextCoders.Middleware;
+using NextCoders.Email.Services;
 
 var builder = WebApplication.CreateBuilder(args);
-StartAPI(builder);
 
-void StartAPI(WebApplicationBuilder builder)
+// Add services
+builder.Services.AddControllers();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen(c =>
 {
-    ConfigureServices(builder);
+    c.SwaggerDoc("v1", new() { Title = "NextCoders Email API", Version = "v1" });
+});
 
-    var app = builder.Build();
-    app.UseAuthentication();
-    app.UseAuthorization();
-    app.MapControllers();
-    app.UseSwagger();
-    app.UseAuthSwaggerConfiguration();
-    app.UseAuthCorsConfiguration();
-    app.UseHealthChecks("/health", HealthMiddleware.GetHealthCheckOptions(typeof(Program).Assembly));
-    app.Run();
+// Register mock email service
+builder.Services.AddScoped<IEmailService, MockEmailService>();
 
-}
-
-
-void ConfigureServices(WebApplicationBuilder builder)
+// Configure CORS
+builder.Services.AddCors(options =>
 {
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()
+              .AllowAnyMethod()
+              .AllowAnyHeader();
+    });
+});
 
-    // Serilog
-    builder.UseSerilogConfiguration();
-    builder.Services.AddDbContext<NextCodersDbContext>();
-    builder.Services.AddDbContext<NextCodersStudentDbContext>();
-    builder.Services.AddControllers();
-    builder.Services.AddEndpointsApiExplorer();
-    builder.Services.AddAuthCorsConfiguration();
-    builder.Services.AddAuthSwaggerEmailConfiguration();
-    builder.Services.AddHealthChecks();
-    builder.Services.AddEmailSendServicesConfiguration(builder.Configuration);
-    builder.Services.AddMassTransit(builder.Configuration);
-    builder.Services.AddProviders();
-}
+var app = builder.Build();
+
+// Configure middleware
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "NextCoders Email API v1");
+});
+
+app.UseCors("AllowAll");
+app.MapControllers();
+
+Console.WriteLine("🚀 NextCoders Email API (Mock Mode) is running!");
+Console.WriteLine("📧 Swagger UI: https://localhost:7071/swagger");
+
+app.Run();
 
