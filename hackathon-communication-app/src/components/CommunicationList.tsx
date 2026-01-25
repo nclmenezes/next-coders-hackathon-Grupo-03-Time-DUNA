@@ -207,7 +207,7 @@ const CommunicationList: React.FC = () => {
             onClick={handleSendClick}
             sx={{ ml: 'auto', bgcolor: '#679d12', '&:hover': { bgcolor: '#558010' } }}
           >
-            Enviar Email ({selectedEmails.size})
+            Criar Novo Email ({selectedEmails.size})
           </Button>
         </Box>
       </Paper>
