@@ -151,7 +151,7 @@ const CommunicationList: React.FC = () => {
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ mb: 4 }}>
         <Typography variant="h4" component="h1" gutterBottom>
-          Envio de Emails Next Coders
+          Caixa de Mensagens Next Coders
         </Typography>
       </Box>
 
