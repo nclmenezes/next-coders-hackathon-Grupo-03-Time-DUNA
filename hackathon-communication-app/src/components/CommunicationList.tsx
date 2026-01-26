@@ -159,7 +159,7 @@ const CommunicationList: React.FC = () => {
       <Paper sx={{ p: 2, mb: 3 }}>
         <Box sx={{ display: 'flex', gap: 2, flexWrap: 'wrap', alignItems: 'center' }}>
           <TextField
-            label="Filtrar por nome"
+            label="Buscar"
             value={nameFilter}
             onChange={(e) => setNameFilter(e.target.value)}
             sx={{ minWidth: 200 }}
