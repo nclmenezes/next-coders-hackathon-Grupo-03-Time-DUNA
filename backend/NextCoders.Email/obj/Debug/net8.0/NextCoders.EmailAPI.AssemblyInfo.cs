@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NextCoders.EmailAPI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f22d499841c76aa23674a68aa10240737099d696")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+28cfdccd5bdc7189e46b5c24bd70b83325f6e80c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NextCoders.EmailAPI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NextCoders.EmailAPI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -27,6 +27,7 @@ import { Email } from '../types';
 import mailService from '../services/mailService';
 import Loading from './Loading';
 import { showNotFoundErrorToast } from '../utils/toast';
+import logo from '../utils/logo.png'
 
 const CommunicationList: React.FC = () => {
   const navigate = useNavigate();
@@ -150,9 +151,16 @@ const CommunicationList: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ mb: 4 }}>
-        <Typography variant="h6" component="h1" gutterBottom fontSize="2rem" sx={{ fontFamily: 'Arial, sans-serif'}}>
-         Caixa de Mensagens Next Coders
+
+        <img src= {logo} width={180}/>
+        <Typography variant="h4" component="h2" gutterBottom sx={{ fontFamily: 'Oxanium, serif', fontSize: '4 rem', fontWeight: 'bold', color: '#125E97' }}>
+          Caixa de Mensagens Next Coders
         </Typography>
+        
+
+      <Typography variant="body2" color="text.secondary">
+         Envie avisos, comunicados e mensagens importantes para alunos e instrutores
+      </Typography>
       </Box>
 
       {/* Filters */}
@@ -207,7 +215,7 @@ const CommunicationList: React.FC = () => {
             onClick={handleSendClick}
             sx={{ ml: 'auto', bgcolor: '#679d12', '&:hover': { bgcolor: '#558010' } }}
           >
-            Criar Novo Email ({selectedEmails.size})
+            Enviar Novo Email ({selectedEmails.size})
           </Button>
         </Box>
       </Paper>
