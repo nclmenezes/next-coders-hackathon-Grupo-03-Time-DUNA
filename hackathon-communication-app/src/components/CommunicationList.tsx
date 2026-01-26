@@ -150,7 +150,7 @@ const CommunicationList: React.FC = () => {
   return (
     <Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
       <Box sx={{ mb: 4 }}>
-        <Typography variant="h4" component="h1" gutterBottom fontSize="2rem" sx={{ fontFamily: 'Arial, sans-serif'}}>
+        <Typography variant="h6" component="h1" gutterBottom fontSize="2rem" sx={{ fontFamily: 'Arial, sans-serif'}}>
          Caixa de Mensagens Next Coders
         </Typography>
       </Box>
