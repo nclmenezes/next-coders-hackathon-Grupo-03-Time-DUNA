@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using NextCoders.Email.Models;
 using NextCoders.Email.Services;
+using NextCoders.Email.Data;
 
 namespace NextCoders.Email.Controllers;
 
@@ -8,10 +9,12 @@ namespace NextCoders.Email.Controllers;
 [Route("api/[controller]")]
 public class EmailController : ControllerBase
 {
+    private readonly AppDbContext _appDbContext;
     private readonly IEmailService _emailService;
 
-    public EmailController(IEmailService emailService)
+    public EmailController(AppDbContext appDbContext, IEmailService emailService)
     {
+        _appDbContext = appDbContext;
         _emailService = emailService;
     }
 

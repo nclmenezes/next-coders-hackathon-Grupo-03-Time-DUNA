@@ -1,6 +1,13 @@
+using Microsoft.EntityFrameworkCore;
 using NextCoders.Email.Services;
+using NextCoders.Email.Data;
 
 var builder = WebApplication.CreateBuilder(args);
+
+var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)
+    ));
 
 // Add services
 builder.Services.AddControllers();
@@ -40,4 +47,3 @@ Console.WriteLine("🚀 NextCoders Email API (Mock Mode) is running!");
 Console.WriteLine("📧 Swagger UI: https://localhost:7071/swagger");
 
 app.Run();
-
