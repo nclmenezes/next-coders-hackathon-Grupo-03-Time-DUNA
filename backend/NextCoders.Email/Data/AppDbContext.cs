@@ -8,5 +8,6 @@ namespace NextCoders.Email.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) {}
 
         public DbSet<EmailResponse> Dbemails { get; set; }
+        public DbSet<EmailLog> Emaillogs { get; set; }
     }
 }

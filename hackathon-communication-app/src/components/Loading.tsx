@@ -11,7 +11,7 @@ const Loading: React.FC = () => {
         minHeight: '400px',
       }}
     >
-      <CircularProgress size={60} />
+      <CircularProgress size={60} sx={{ color: '#125E97' }} />
     </Box>
   );
 };

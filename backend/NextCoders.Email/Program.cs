@@ -17,8 +17,8 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1", new() { Title = "NextCoders Email API", Version = "v1" });
 });
 
-// Register mock email service
-builder.Services.AddScoped<IEmailService, MockEmailService>();
+// Register email service implementation
+builder.Services.AddScoped<IEmailService, EmailService>();
 
 // Configure CORS
 builder.Services.AddCors(options =>

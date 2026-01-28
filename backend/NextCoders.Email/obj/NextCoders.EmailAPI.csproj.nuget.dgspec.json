@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/workspaces/next-coders-hackathon-Grupo-03-Time-DUNA/backend/NextCoders.Email/NextCoders.EmailAPI.csproj": {}
+    "C:\\Users\\nclsu\\Documents\\time duna\\next-coders-hackathon-Grupo-03-Time-DUNA\\backend\\NextCoders.Email\\NextCoders.EmailAPI.csproj": {}
   },
   "projects": {
-    "/workspaces/next-coders-hackathon-Grupo-03-Time-DUNA/backend/NextCoders.Email/NextCoders.EmailAPI.csproj": {
+    "C:\\Users\\nclsu\\Documents\\time duna\\next-coders-hackathon-Grupo-03-Time-DUNA\\backend\\NextCoders.Email\\NextCoders.EmailAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/workspaces/next-coders-hackathon-Grupo-03-Time-DUNA/backend/NextCoders.Email/NextCoders.EmailAPI.csproj",
+        "projectUniqueName": "C:\\Users\\nclsu\\Documents\\time duna\\next-coders-hackathon-Grupo-03-Time-DUNA\\backend\\NextCoders.Email\\NextCoders.EmailAPI.csproj",
         "projectName": "NextCoders.EmailAPI",
-        "projectPath": "/workspaces/next-coders-hackathon-Grupo-03-Time-DUNA/backend/NextCoders.Email/NextCoders.EmailAPI.csproj",
-        "packagesPath": "/home/codespace/.nuget/packages/",
-        "outputPath": "/workspaces/next-coders-hackathon-Grupo-03-Time-DUNA/backend/NextCoders.Email/obj/",
+        "projectPath": "C:\\Users\\nclsu\\Documents\\time duna\\next-coders-hackathon-Grupo-03-Time-DUNA\\backend\\NextCoders.Email\\NextCoders.EmailAPI.csproj",
+        "packagesPath": "C:\\Users\\nclsu\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\nclsu\\Documents\\time duna\\next-coders-hackathon-Grupo-03-Time-DUNA\\backend\\NextCoders.Email\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/codespace/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\nclsu\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -38,12 +38,18 @@
           "auditLevel": "low",
           "auditMode": "direct"
         },
-        "SdkAnalysisLevel": "10.0.100"
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
             "Pomelo.EntityFrameworkCore.MySql": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -64,20 +70,6 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "downloadDependencies": [
-            {
-              "name": "Microsoft.AspNetCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Host.linux-x64",
-              "version": "[8.0.22, 8.0.22]"
-            },
-            {
-              "name": "Microsoft.NETCore.App.Ref",
-              "version": "[8.0.22, 8.0.22]"
-            }
-          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -86,7 +78,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/10.0.100/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.310/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

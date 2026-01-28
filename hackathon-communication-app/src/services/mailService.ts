@@ -1,24 +1,56 @@
-import { Email, EmailPayload } from '../types';
-import { mockEmails } from './mockData';
+import { Email} from '../types';
+import api from './Api';
 
-// Simulated delay for API calls
-const delay = (ms: number) => new Promise(resolve => setTimeout(resolve, ms));
 
 class MailService {
+
   // Get all emails (simulated API call)
   async getMails(): Promise<Email[]> {
-    await delay(500); // Simulate network delay
-    return mockEmails;
+    const response=await api.get<Email[]>('/email');
+    return response.data;
   }
 
-  // Send communication (simulated API call)
-  async sendCommunication(payload: EmailPayload): Promise<number> {
-    await delay(1000); // Simulate network delay
-    
-    console.log('Simulated email send:', payload);
-    
-    // Simulate success
-    return 200;
+  // POST - Criar [HttpPost("create")]
+  async addEmail(data: { name: string; email: string; class: string; role: string }) {
+    const response = await api.post('/email/create', data);
+    return response.data;
+  }
+
+  // PUT - Atualizar [HttpPut("{id}")]
+  async updateEmail(id: string, data: Partial<Email>) {
+    const response = await api.put(`/email/${id}`, data);
+    return response.data;
+  }
+
+  // DELETE - Remover [HttpDelete("{id}")]
+  async deleteEmail(id: string) {
+    const response = await api.delete(`/email/${id}`);
+    return response.data;
+  }
+  
+  async sendCommunication(payload: any): Promise<number> {
+  // Criamos o objeto exatamente como o C# espera (EmailRequest)
+  const emailRequest = {
+    recipients: [payload.to], // O back espera uma lista de strings
+    subject: `Comunicado para ${payload.name}`, // Ou o campo que for o assunto
+    body: payload.message
+  };
+
+  const response = await api.post('/Email', emailRequest);
+  return response.status;
+}
+
+
+  // rota de busca
+  async searchEmails(term: string): Promise<Email[]> {
+    const response=await api.get<Email[]>(`/email/search?term=${term}`);
+    return response.data;
+  }
+
+  //rota de emails enviados
+  async sentEmails(): Promise<any[]> {
+    const response=await api.get('/Email/sent-emails');
+    return response.data;
   }
 }
 

@@ -5,8 +5,8 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import CommunicationList from './components/CommunicationList';
-import CommunicationSender from './components/CommunicationSender'; 
-import {Button} from '@mui/material';
+import CommunicationSender from './components/CommunicationSender';
+import CommunicationHistory from './components/CommunicationHistory';
 
 const App: React.FC = () => {
   const [darkMode, setDarkMode] = useState(false);
@@ -29,16 +29,13 @@ const App: React.FC = () => {
       <CssBaseline />
       <Router>
         <Routes>
-          <Route path="/" element={<CommunicationList />} />
+          <Route path="/" element={<CommunicationList darkMode={darkMode} setDarkMode={setDarkMode} />} />
           <Route path="/send" element={<CommunicationSender />} />
+          <Route path="sent-emails" element={<CommunicationHistory />} />
         </Routes>
       </Router>
       <ToastContainer />
-      {/* Exemplo de botão para alternar dark mode */}
-      <Button onClick={() => setDarkMode(!darkMode)}
-         sx={{ ml: 'auto', bgcolor: '#679d12', '&:hover': { bgcolor: '#558010' },color: 'white' }}> 
-        Alternar para {darkMode ? 'Light' : 'Dark'} Mode
-      </Button>
+     
     </ThemeProvider>
   );
 };
