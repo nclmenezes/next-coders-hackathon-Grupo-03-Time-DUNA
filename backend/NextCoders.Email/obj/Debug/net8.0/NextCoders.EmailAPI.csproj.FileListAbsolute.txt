@@ -520,3 +520,5 @@ C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\back
 C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\backend\NextCoders.Email\obj\Debug\net8.0\NextCoders.EmailAPI.pdb
 C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\backend\NextCoders.Email\obj\Debug\net8.0\NextCoders.EmailAPI.genruntimeconfig.cache
 C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\backend\NextCoders.Email\obj\Debug\net8.0\ref\NextCoders.EmailAPI.dll
+C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\backend\NextCoders.Email\bin\Debug\net8.0\DotNetEnv.dll
+C:\Users\nclsu\Documents\time duna\next-coders-hackathon-Grupo-03-Time-DUNA\backend\NextCoders.Email\bin\Debug\net8.0\Sprache.dll

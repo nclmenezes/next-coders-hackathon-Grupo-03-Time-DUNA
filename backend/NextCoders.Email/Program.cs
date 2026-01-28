@@ -1,13 +1,21 @@
 using Microsoft.EntityFrameworkCore;
 using NextCoders.Email.Services;
 using NextCoders.Email.Data;
+using DotNetEnv;
 
 var builder = WebApplication.CreateBuilder(args);
 
-var connectionString = builder.Configuration.GetConnectionString("AppDbConnectionString");
+Env.Load();
+string host = Environment.GetEnvironmentVariable("DB_HOST");
+string port = Environment.GetEnvironmentVariable("DB_PORT");
+string name = Environment.GetEnvironmentVariable("DB_NAME");
+string user = Environment.GetEnvironmentVariable("DB_USER");
+string pass = Environment.GetEnvironmentVariable("DB_PASSWORD");
+
+string connectionString = $"Server={host};Port={port};Database={name};User={user};Password={pass}";
+
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)
-    ));
+    options.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 // Add services
 builder.Services.AddControllers();
