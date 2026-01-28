@@ -7,7 +7,7 @@ RUN dotnet restore
 
 # 2. Copia todo o resto (Program.cs, Controllers, etc)
 COPY . ./
-RUN dotnet publish -c Release -o out
+RUN dotnet publish NextCoders.EmailAPI.csproj -c Release -o out
 
 # 3. Estágio de Runtime
 FROM mcr.microsoft.com/dotnet/aspnet:8.0
