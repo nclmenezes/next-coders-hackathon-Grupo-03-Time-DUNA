@@ -19,7 +19,7 @@ const App: React.FC = () => {
     },
     typography: {
       fontFamily: 'Rajdhani, sans-serif',
-      fontSize: 17,
+      fontSize: 16.5,
       fontWeightMedium: 600,
     },
   });
