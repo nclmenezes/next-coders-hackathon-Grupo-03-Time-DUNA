@@ -6,25 +6,25 @@ class MailService {
 
   // Get all emails (simulated API call)
   async getMails(): Promise<Email[]> {
-    const response=await api.get<Email[]>('/api/email');
+    const response=await api.get<Email[]>('/api/Email');
     return response.data;
   }
 
   // POST - Criar [HttpPost("create")]
   async addEmail(data: { name: string; email: string; class: string; role: string }) {
-    const response = await api.post('/api/email/create', data);
+    const response = await api.post('/api/Email/create', data);
     return response.data;
   }
 
   // PUT - Atualizar [HttpPut("{id}")]
   async updateEmail(id: string, data: Partial<Email>) {
-    const response = await api.put(`/api/email/${id}`, data);
+    const response = await api.put(`/api/Email/${id}`, data);
     return response.data;
   }
 
   // DELETE - Remover [HttpDelete("{id}")]
   async deleteEmail(id: string) {
-    const response = await api.delete(`/api/email/${id}`);
+    const response = await api.delete(`/api/Email/${id}`);
     return response.data;
   }
   
@@ -43,7 +43,7 @@ class MailService {
 
   // rota de busca
   async searchEmails(term: string): Promise<Email[]> {
-    const response=await api.get<Email[]>(`/api/email/search?term=${term}`);
+    const response=await api.get<Email[]>(`/api/Email/search?term=${term}`);
     return response.data;
   }
 
