@@ -6,7 +6,7 @@ using NextCoders.Email.Data;
 namespace NextCoders.Email.Controllers;
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api/email")]
 public class EmailController : ControllerBase
 {
     private readonly AppDbContext _appDbContext;
@@ -37,7 +37,7 @@ public class EmailController : ControllerBase
         }
     }
     
-    [HttpPost("Communication")]
+    [HttpPost("communication")]
     public async Task<IActionResult> SendCommunication([FromBody] EmailRequest request)
     {
         try
@@ -56,7 +56,7 @@ public class EmailController : ControllerBase
         }
     }
     
-    [HttpGet]
+    [HttpGet ("getemails")]
     public async Task<IActionResult> GetEmails()
     {
         try
